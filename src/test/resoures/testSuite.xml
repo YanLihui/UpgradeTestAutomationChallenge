@@ -1,0 +1,14 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="suite">
+    <listeners>
+        <listener class-name="tech.credify.reports.ExtentReportTAChallenge" />
+    </listeners>
+    <test name="check Personal Loan and Register">
+        <classes>
+            <class name="tech.credify.tests.PersonalInfoPageTest" />
+            <class name="tech.credify.tests.PersonalOfferHomePageTest" />
+            <class name="tech.credify.tests.LoginPageTest" />
+        </classes>
+    </test>
+</suite>
