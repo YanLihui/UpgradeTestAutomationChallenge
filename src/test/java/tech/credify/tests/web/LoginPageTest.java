@@ -27,7 +27,7 @@ public class LoginPageTest  extends TestBase {
         loginPage = new LoginPage();
     }
 
-    @Test
+    @Test(enabled = false)
     public void loginWithCorrectCredentials()
     {
         personalOfferHomePage = loginPage.login(prop.getProperty("username"),prop.getProperty("password"));

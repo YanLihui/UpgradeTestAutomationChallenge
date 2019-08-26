@@ -26,7 +26,7 @@ public class NonDMFunnelPageTest extends TestBase {
         nonDMFunnelPage = new NonDMFunnelPage();
     }
 
-    @Test
+    @Test(enabled = false)
     public void getRateTest()
     {
         accountCreationPage = nonDMFunnelPage.getRate(prop.getProperty("desiredAmount"));
