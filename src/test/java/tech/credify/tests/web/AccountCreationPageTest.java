@@ -1,25 +1,24 @@
-package tech.credify.tests;
+package tech.credify.tests.web;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import tech.credify.base.TestBase;
-import tech.credify.pages.LoginPage;
-import tech.credify.pages.PersonalInformationPage;
-import tech.credify.pages.PersonalLoanPage;
+import tech.credify.pages.AccountCreationPage;
+import tech.credify.pages.NonDMFunnelPage;
 import tech.credify.pages.PersonalOfferHomePage;
 
 import java.io.IOException;
 
 import static tech.credify.utils.GlobalConstant.*;
 
-public class PersonalInfoPageTest extends TestBase {
+public class AccountCreationPageTest extends TestBase {
 
-    private PersonalLoanPage personalLoanPortal;
-    private PersonalInformationPage personalInformationPage;
+    private NonDMFunnelPage personalLoanPortal;
+    private AccountCreationPage accountCreationPage;
     private PersonalOfferHomePage personalOfferHomePage;
 
-    public PersonalInfoPageTest()
+    public AccountCreationPageTest()
     {
         super();
     }
@@ -28,13 +27,14 @@ public class PersonalInfoPageTest extends TestBase {
     public void setup() {
 
         initialization(CHECK_YOUR_RATE_URL);
-        personalLoanPortal = new PersonalLoanPage();
-        personalInformationPage = personalLoanPortal.getRate(prop.getProperty("desiredAmount"));
+        personalLoanPortal = new NonDMFunnelPage();
+        accountCreationPage = personalLoanPortal.getRate(prop.getProperty("desiredAmount"));
     }
 
     @Test
-    public void personalInfoPageTest() throws IOException {
-        personalOfferHomePage = personalInformationPage.createAcount();
+    public void createAccountTest() throws IOException {
+
+        personalOfferHomePage = accountCreationPage.createAcount();
 
         try {
             Thread.sleep(POLL_DELAY_MILLINSECONDS);
@@ -45,7 +45,6 @@ public class PersonalInfoPageTest extends TestBase {
         personalOfferHomePage.saveDataToExcel();
 
     }
-
 
     @AfterMethod
     public void tearDown()

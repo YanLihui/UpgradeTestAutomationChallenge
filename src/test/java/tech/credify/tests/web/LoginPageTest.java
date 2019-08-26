@@ -1,5 +1,6 @@
-package tech.credify.tests;
+package tech.credify.tests.web;
 
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -30,6 +31,7 @@ public class LoginPageTest  extends TestBase {
     public void loginWithCorrectCredentials()
     {
         personalOfferHomePage = loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
+        Assert.assertEquals(prop.getProperty("offersWelcomeMessage"),personalOfferHomePage.getWelcomeMessage());
 
     }
 

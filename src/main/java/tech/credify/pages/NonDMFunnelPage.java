@@ -6,7 +6,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import tech.credify.base.TestBase;
 
-public class PersonalLoanPage extends TestBase {
+public class NonDMFunnelPage extends TestBase {
 
     @FindBy (xpath = "//input[@name= 'desiredAmount']")
     private WebElement inputDesiredAmount;
@@ -15,17 +15,17 @@ public class PersonalLoanPage extends TestBase {
     @FindBy (xpath = "//button[@data-auto = 'CheckYourRate']")
     private WebElement btnCheckRate;
 
-    public PersonalLoanPage() {
+    public NonDMFunnelPage() {
         PageFactory.initElements(webDriver, this);
     }
 
-    public PersonalInformationPage getRate(String loanAmount )
+    public AccountCreationPage getRate(String loanAmount )
     {
         inputDesiredAmount.sendKeys(loanAmount);
 
         Select drpLoanPurpose = new Select(dropLoanPurpose);
         drpLoanPurpose.selectByValue("CREDIT_CARD");
         btnCheckRate.click();
-        return new PersonalInformationPage();
+        return new AccountCreationPage();
     }
 }

@@ -1,4 +1,4 @@
-package tech.credify.tests;
+package tech.credify.tests.web;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -32,21 +32,9 @@ public class PersonalOfferHomePageTest extends TestBase {
         personalOfferHomePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
     }
 
-//    @Test(priority = 1)
-//    public void getPersonalHomePageTitleTest(){
-//
-//        try {
-//            Thread.sleep(POLL_DELAY_MILLINSECONDS);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        final String actualTitle = personalOfferHomePage.getPersonalOfferHomePageTitle();
-//        Assert.assertEquals(actualTitle,PERSONAL_HOMEPAGE_TITLE,"Home Page title does not match.");
-//    }
-
     @Test(priority = 1, dataProvider="getTestData")
-    public void PersonalOfferTest(final String expectedLoanAmount, final String expectedMonthlyPayment, final String expectedInterestRate,
-    final String expectedLoanTerm, final String expectedAPR){
+    public void personalOfferDetailsValidationTest(final String expectedLoanAmount, final String expectedMonthlyPayment, final String expectedInterestRate,
+                                                   final String expectedLoanTerm, final String expectedAPR){
 
         try {
             Thread.sleep(POLL_DELAY_MILLINSECONDS);

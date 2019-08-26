@@ -12,6 +12,8 @@ import java.util.ArrayList;
 
 public class PersonalOfferHomePage extends TestBase {
 
+    @FindBy(xpath = "//h2[contains(text(),'Great news, here are your offers!')]")
+    WebElement welcomeMessage;
     @FindBy(xpath = "//span[@data-auto = 'userLoanAmount']")
     WebElement userLoanAmount;
     @FindBy(xpath = "//span[@data-auto = 'defaultMonthlyPayment']")
@@ -86,4 +88,10 @@ public class PersonalOfferHomePage extends TestBase {
         testUtil.saveOfferInformationToExcel("personalOffer",offerDetails);
 
     }
+
+    public String getWelcomeMessage()
+    {
+        return welcomeMessage.getText();
+    }
+
 }

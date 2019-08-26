@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="7">Command line suite</th></tr>
+<tr><td><a href="#t0">Command line test</a></td><td class="num">6</td><td class="num">0</td><td class="num attn">1</td><td class="num">53,556</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Command line suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Command line test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">tech.credify.tests.web.PersonalOfferHomePageTest</td><td><a href="#m0">personalOfferDetailsValidationTest</a></td><td rowspan="1">1566838532924</td><td rowspan="1">10386</td></tr><tr><th colspan="4">Command line test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="3">tech.credify.tests.rest.EligibleStatesTest</td><td><a href="#m1">testAPIServiceUP</a></td><td rowspan="1">1566838525310</td><td rowspan="1">1578</td></tr><tr class="passedeven"><td><a href="#m2">validateEligibleStatesNumber</a></td><td rowspan="1">1566838526889</td><td rowspan="1">1069</td></tr><tr class="passedeven"><td><a href="#m3">validateOnlyOneStateHasMinLoanAmount3005</a></td><td rowspan="1">1566838527958</td><td rowspan="1">547</td></tr><tr class="passedodd"><td rowspan="1">tech.credify.tests.web.AccountCreationPageTest</td><td><a href="#m4">createAccountTest</a></td><td rowspan="1">1566838495940</td><td rowspan="1">13760</td></tr><tr class="passedeven"><td rowspan="1">tech.credify.tests.web.LoginPageTest</td><td><a href="#m5">loginWithCorrectCredentials</a></td><td rowspan="1">1566838512862</td><td rowspan="1">6134</td></tr><tr class="passedodd"><td rowspan="1">tech.credify.tests.web.NonDMFunnelPageTest</td><td><a href="#m6">getRateTest</a></td><td rowspan="1">1566838524563</td><td rowspan="1">558</td></tr></tbody>
+</table>
+<h2>Command line test</h2><h3 id="m0">tech.credify.tests.web.PersonalOfferHomePageTest#personalOfferDetailsValidationTest</h3><table class="result"><tr class="param"><th>Parameter #1</th><th>Parameter #2</th><th>Parameter #3</th><th>Parameter #4</th><th>Parameter #5</th></tr><tr class="param stripe"><td>2,000</td><td>$67.74</td><td>13.36% Interest Rate</td><td>36 Month Term</td><td>16.99% APR (more info)</td></tr><tr><th colspan="5">Exception</th></tr><tr><td colspan="5"><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;a class=&quot;header-nav-menu__link&quot; href=&quot;/phone/logout&quot;&gt;...&lt;/a&gt; is not clickable at point (1385, 140). Other element would receive the click: &lt;li class=&quot;header-nav-menu__item&quot;&gt;...&lt;/li&gt;
+  (Session info: chrome=76.0.3809.100)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;Yans-MacBook-Pro.local&apos;, ip: &apos;fe80:0:0:0:45a:8839:f5b:46c4%en0&apos;, os.name: &apos;Mac OS X&apos;, os.arch: &apos;x86_64&apos;, os.version: &apos;10.13.6&apos;, java.version: &apos;1.8.0_171&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 76.0.3809.100, chrome: {chromedriverVersion: 76.0.3809.68 (420c9498db8ce..., userDataDir: /var/folders/x0/qr5fkvx56g7...}, goog:chromeOptions: {debuggerAddress: localhost:59715}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 97cf6536ad3c50e9753985283753dbec
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.lambda$new$0(EventFiringWebDriver.java:404)
+	at com.sun.proxy.$Proxy11.click(Unknown Source)
+	at org.openqa.selenium.support.events.EventFiringWebDriver$EventFiringWebElement.click(EventFiringWebDriver.java:417)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy10.click(Unknown Source)
+	at tech.credify.pages.PersonalOfferHomePage.logout(PersonalOfferHomePage.java:73)
+	at tech.credify.tests.web.PersonalOfferHomePageTest.personalOfferDetailsValidationTest(PersonalOfferHomePageTest.java:60)
+... Removed 47 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">tech.credify.tests.rest.EligibleStatesTest#testAPIServiceUP</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">tech.credify.tests.rest.EligibleStatesTest#validateEligibleStatesNumber</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">tech.credify.tests.rest.EligibleStatesTest#validateOnlyOneStateHasMinLoanAmount3005</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">tech.credify.tests.web.AccountCreationPageTest#createAccountTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">tech.credify.tests.web.LoginPageTest#loginWithCorrectCredentials</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">tech.credify.tests.web.NonDMFunnelPageTest#getRateTest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

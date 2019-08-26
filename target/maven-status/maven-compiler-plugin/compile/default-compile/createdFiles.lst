@@ -1,0 +1,10 @@
+tech/credify/utils/GlobalConstant.class
+tech/credify/utils/WebEventListener.class
+tech/credify/utils/TestUtil.class
+tech/credify/base/TestBase.class
+tech/credify/reports/ExtentReportTAChallenge.class
+tech/credify/pages/NonDMFunnelPage.class
+tech/credify/pages/AccountCreationPage.class
+tech/credify/pages/LogoutPage.class
+tech/credify/pages/PersonalOfferHomePage.class
+tech/credify/pages/LoginPage.class

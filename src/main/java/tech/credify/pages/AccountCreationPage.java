@@ -7,7 +7,7 @@ import tech.credify.base.TestBase;
 
 import java.awt.*;
 
-public class PersonalInformationPage extends TestBase {
+public class AccountCreationPage extends TestBase {
 
 
     @FindBy (xpath = "//input[@name='borrowerFirstName']")
@@ -37,7 +37,7 @@ public class PersonalInformationPage extends TestBase {
     @FindBy (xpath = "//button[@data-auto ='submitPersonalInfo']")
     WebElement btnSubmit;
 
-    public PersonalInformationPage() {
+    public AccountCreationPage() {
         PageFactory.initElements(webDriver, this);
     }
 
