@@ -3,6 +3,7 @@ package tech.credify.tests.rest;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
+import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,14 +13,12 @@ import java.util.Map;
 import static io.restassured.RestAssured.given;
 import static tech.credify.utils.GlobalConstant.BASE_URL;
 
-import org.slf4j.LoggerFactory;
-import org.slf4j.Logger;
-
 
 public class EligibleStatesTest {
 
 
-    private static Logger logger = LoggerFactory.getLogger(EligibleStatesTest.class);
+     private Logger logger = Logger.getLogger(EligibleStatesTest.class);
+
     @Test
     public void testAPIServiceUP()
     {
@@ -61,7 +60,7 @@ public class EligibleStatesTest {
             if (minAge == 19) {
                 countForMinAge19 += 1;
                 stateNameMinAge19 = (String) state.get("label");
-                logger.info("Only the state of" + stateNameMinAge19 + "has minAge of 19\n");
+                logger.info("Only the state of " + stateNameMinAge19 + "has minAge of 19\n");
 
             }
             if(minLoanAmount == 3005){

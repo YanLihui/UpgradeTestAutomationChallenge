@@ -58,12 +58,12 @@ public class TestBase {
            webDriver = new FirefoxDriver();
 
        }
-
-       e_driver = new EventFiringWebDriver(webDriver);
-       // Now create object of EventListerHandler to register it with EventFiringWebDriver
-       eventListener = new WebEventListener();
-       e_driver.register(eventListener);
-       webDriver = e_driver;
+//
+//       e_driver = new EventFiringWebDriver(webDriver);
+//       // Now create object of EventListerHandler to register it with EventFiringWebDriver
+//       eventListener = new WebEventListener();
+//       e_driver.register(eventListener);
+//       webDriver = e_driver;
 
        webDriver.manage().window().maximize();
            webDriver.manage().deleteAllCookies();
