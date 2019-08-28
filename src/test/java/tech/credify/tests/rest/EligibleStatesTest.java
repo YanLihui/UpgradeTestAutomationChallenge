@@ -3,7 +3,9 @@ package tech.credify.tests.rest;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
-import org.apache.log4j.Logger;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -17,7 +19,7 @@ import static tech.credify.utils.GlobalConstant.BASE_URL;
 public class EligibleStatesTest {
 
 
-     private Logger logger = Logger.getLogger(EligibleStatesTest.class);
+     private Logger logger = LogManager.getLogger(EligibleStatesTest.class);
 
     @Test
     public void testAPIServiceUP()

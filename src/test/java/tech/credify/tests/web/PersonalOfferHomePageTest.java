@@ -1,5 +1,7 @@
 package tech.credify.tests.web;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -20,6 +22,8 @@ public class PersonalOfferHomePageTest extends TestBase {
     private LogoutPage logoutPage;
     String sheetName = "personalOffer";
 
+    private Logger logger = LogManager.getLogger(PersonalOfferHomePageTest.class);
+
     public PersonalOfferHomePageTest(){
         super();
     }
@@ -35,6 +39,8 @@ public class PersonalOfferHomePageTest extends TestBase {
     @Test(priority = 1, dataProvider="getTestData")
     public void personalOfferDetailsValidationTest(final String expectedLoanAmount, final String expectedMonthlyPayment, final String expectedInterestRate,
                                                    final String expectedLoanTerm, final String expectedAPR){
+
+        logger.info("\n===================================Starting validating the Loan details ====================================\n");
 
         try {
             Thread.sleep(POLL_DELAY_MILLINSECONDS);
@@ -58,6 +64,9 @@ public class PersonalOfferHomePageTest extends TestBase {
         Assert.assertEquals(expectedAPR,apr);
 
         logoutPage = personalOfferHomePage.logout();
+
+        logger.info("\n=================================== Validation Done ====================================\n");
+
     }
 
     @DataProvider

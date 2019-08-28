@@ -1,6 +1,7 @@
 package tech.credify.tests.web;
 
-import org.apache.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -23,26 +24,24 @@ public class AccountCreationPageTest extends TestBase {
         super();
     }
 
-    Logger logger = Logger.getLogger(AccountCreationPageTest.class);
+    private Logger logger = LogManager.getLogger(AccountCreationPageTest.class);
 
     @BeforeMethod
     public void setup() {
 
 
-        logger.info("====================================Account Creation Test Setup Start ====================================\n");
+        logger.info("\n====================================Account Creation Test Setup... ====================================\n");
 
         initialization(CHECK_YOUR_RATE_URL);
         personalLoanPortal = new NonDMFunnelPage();
         accountCreationPage = personalLoanPortal.getRate(prop.getProperty("desiredAmount"));
-
-        logger.info("====================================Account Creation Test Setup End ====================================\n");
 
     }
 
     @Test
     public void createAccountTest() throws IOException {
 
-        logger.info("====================================Creating Account ====================================\n");
+        logger.info("\n====================================Creating Account and save data to excel ====================================\n");
 
 
         personalOfferHomePage = accountCreationPage.createAcount();
