@@ -27,10 +27,9 @@ public class NonDMFunnelPageTest extends TestBase {
     }
 
     @Test(enabled = false)
-    public void getRateTest()
+    public void getRateTest() throws InterruptedException
     {
         accountCreationPage = nonDMFunnelPage.getRate(prop.getProperty("desiredAmount"));
-
     }
 
     @AfterMethod

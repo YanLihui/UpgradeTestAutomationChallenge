@@ -24,14 +24,12 @@ public class AccountCreationPageTest extends TestBase {
         super();
     }
 
-    private Logger logger = LogManager.getLogger(AccountCreationPageTest.class);
+    private static Logger logger = LogManager.getLogger(AccountCreationPageTest.class);
 
     @BeforeMethod
-    public void setup() {
-
+    public void setup() throws InterruptedException {
 
         logger.info("\n====================================Account Creation Test Setup... ====================================\n");
-
         initialization(CHECK_YOUR_RATE_URL);
         personalLoanPortal = new NonDMFunnelPage();
         accountCreationPage = personalLoanPortal.getRate(prop.getProperty("desiredAmount"));
@@ -39,21 +37,12 @@ public class AccountCreationPageTest extends TestBase {
     }
 
     @Test
-    public void createAccountTest() throws IOException {
+    public void createAccountTest() throws IOException, InterruptedException {
 
         logger.info("\n====================================Creating Account and save data to excel ====================================\n");
-
-
-        personalOfferHomePage = accountCreationPage.createAcount();
-
-        try {
-            Thread.sleep(POLL_DELAY_MILLINSECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
+        personalOfferHomePage = accountCreationPage.createAccount();
         personalOfferHomePage.saveDataToExcel();
-
+        personalOfferHomePage.logout();
     }
 
     @AfterMethod
@@ -61,5 +50,4 @@ public class AccountCreationPageTest extends TestBase {
     {
         webDriver.quit();
     }
-
 }

@@ -1,9 +1,11 @@
-# UpgradeTestAutomationChallenge
+## UpgradeTestAutomationChallenge
 
-*clone the latest repo and run :*
+**clone the latest repo and run :** `mvn clean install -DskiptTests` 
 
-`mvn clean install` 
-
-*run all the test case* 
-
+**run all the test case** 
 `mvn test`
+
+**run the smoke tests** 
+` mvn clean test -U -Psmoke`
+
+**log location:** `UpgradeTA/logs/test.log`

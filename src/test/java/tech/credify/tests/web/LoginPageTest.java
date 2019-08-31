@@ -12,6 +12,7 @@ import static tech.credify.utils.GlobalConstant.LOGIN_URL;
 
 public class LoginPageTest  extends TestBase {
 
+
     LoginPage loginPage;
     PersonalOfferHomePage personalOfferHomePage;
 
@@ -27,7 +28,7 @@ public class LoginPageTest  extends TestBase {
         loginPage = new LoginPage();
     }
 
-    @Test(enabled = false)
+    @Test(enabled = true)
     public void loginWithCorrectCredentials()
     {
         personalOfferHomePage = loginPage.login(prop.getProperty("username"),prop.getProperty("password"));

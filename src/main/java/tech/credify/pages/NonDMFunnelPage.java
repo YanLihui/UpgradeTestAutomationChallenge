@@ -12,20 +12,19 @@ public class NonDMFunnelPage extends TestBase {
     private WebElement inputDesiredAmount;
     @FindBy (xpath = "//select[@data-auto = 'dropLoanPurpose']")
     private WebElement dropLoanPurpose;
-    @FindBy (xpath = "//button[@data-auto = 'CheckYourRate']")
+    @FindBy (xpath = "//*[text()='Check your rate']")
     private WebElement btnCheckRate;
 
     public NonDMFunnelPage() {
         PageFactory.initElements(webDriver, this);
     }
 
-    public AccountCreationPage getRate(String loanAmount )
+    public AccountCreationPage getRate(String loanAmount ) throws InterruptedException
     {
         inputDesiredAmount.sendKeys(loanAmount);
-
         Select drpLoanPurpose = new Select(dropLoanPurpose);
         drpLoanPurpose.selectByValue("CREDIT_CARD");
-        btnCheckRate.click();
+        waitforElementThenClick(webDriver,btnCheckRate);
         return new AccountCreationPage();
     }
 }

@@ -19,7 +19,7 @@ import static tech.credify.utils.GlobalConstant.BASE_URL;
 public class EligibleStatesTest {
 
 
-     private Logger logger = LogManager.getLogger(EligibleStatesTest.class);
+     private static Logger logger = LogManager.getLogger(EligibleStatesTest.class);
 
     @Test
     public void testAPIServiceUP()

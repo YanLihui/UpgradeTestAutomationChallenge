@@ -5,8 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import tech.credify.base.TestBase;
 
-import java.awt.*;
-
 public class AccountCreationPage extends TestBase {
 
 
@@ -41,7 +39,7 @@ public class AccountCreationPage extends TestBase {
         PageFactory.initElements(webDriver, this);
     }
 
-    public PersonalOfferHomePage createAcount()
+    public PersonalOfferHomePage createAccount()
     {
         inputBorrowerFirstName.sendKeys(prop.getProperty("firstName"));
         inputBorrowerLastName.sendKeys(prop.getProperty("lastName"));
@@ -56,9 +54,6 @@ public class AccountCreationPage extends TestBase {
         inputBorrowerpassword.sendKeys(prop.getProperty("password"));
         checkConsent.click();
         btnSubmit.click();
-
         return new PersonalOfferHomePage();
-
-
     }
 }

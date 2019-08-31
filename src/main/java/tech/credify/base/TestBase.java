@@ -1,13 +1,13 @@
 package tech.credify.base;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import tech.credify.utils.WebEventListener;
 
 import java.io.FileInputStream;
@@ -65,9 +65,8 @@ public class TestBase {
 //       e_driver.register(eventListener);
 //       webDriver = e_driver;
 
-       webDriver.manage().window().maximize();
            webDriver.manage().deleteAllCookies();
-           webDriver.manage().timeouts().pageLoadTimeout(PAGE_TIMEOUT, TimeUnit.SECONDS);
+           webDriver.manage().window().maximize();
            webDriver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT,TimeUnit.SECONDS);
            webDriver.get(pageUrl);
    }
@@ -77,24 +76,14 @@ public class TestBase {
      *
      * @param element
      */
-    public <T> boolean isElementClickable(final T element)
-    {
+    public  void waitforElementThenClick(WebDriver webDriver, WebElement element) throws InterruptedException {
         try
         {
-            final WebElement elementInstance = getElement(element);
-            return elementInstance.isEnabled() && elementInstance.isDisplayed();
+            WebDriverWait wait = new WebDriverWait(webDriver, 5);
+            wait.until(ExpectedConditions.elementToBeClickable(element));
+            element.click();
         }
-        catch (WebDriverException e)
-        {
-            return false;
+        catch (Exception e) {
         }
     }
-
-
-    public <T> WebElement getElement(final T element)
-    {
-        return (element instanceof WebElement) ? (WebElement) element : webDriver.findElement((By) element);
-    }
-
-
 }

@@ -1,8 +1,13 @@
 package tech.credify.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import tech.credify.base.TestBase;
 import tech.credify.utils.TestUtil;
 
@@ -25,10 +30,10 @@ public class PersonalOfferHomePage extends TestBase {
     @FindBy(xpath = "//div[@data-auto = 'defaultMoreInfoAPR']/div")
     WebElement defaultMoreInfoAPR;
 
-    @FindBy(xpath = "//div[@class = 'header-nav']")
+    @FindBy(xpath = "//label[@class = 'header-nav__toggle']")
     WebElement toggleMenu;
 
-    @FindBy(css = "a[href='/phone/logout']")
+    @FindBy(linkText = "Sign Out")
     WebElement btnSignOut;
 
     public PersonalOfferHomePage() {
@@ -67,11 +72,10 @@ public class PersonalOfferHomePage extends TestBase {
     }
 
 
-    public LogoutPage logout (){
+    public void logout () throws InterruptedException {
 
-        toggleMenu.click();
-        btnSignOut.click();
-        return new LogoutPage();
+        waitforElementThenClick(webDriver, toggleMenu);
+        waitforElementThenClick(webDriver, btnSignOut);
     }
 
     public void saveDataToExcel() throws IOException {

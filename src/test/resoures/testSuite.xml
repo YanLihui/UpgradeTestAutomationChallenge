@@ -1,10 +1,10 @@
 
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="suite">
+<suite name="Upgrade Test suite">
     <listeners>
         <listener class-name="tech.credify.reports.ExtentReportTAChallenge" />
     </listeners>
-    <test name="check Personal Loan and Register">
+    <test name="Web Tests">
         <classes>
             <class name="tech.credify.tests.web.AccountCreationPageTest"></class>
             <class name="tech.credify.tests.web.PersonalOfferHomePageTest" />
